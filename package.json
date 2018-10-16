@@ -1,0 +1,29 @@
+{
+  "name": "exercise-app",
+  "version": "1.0.0",
+  "description": "Robert Alonso",
+  "main": "index.js",
+ 
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alonsor2/Exercise-App.git"
+  },
+  "author": "Robert Alonso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alonsor2/Exercise-App/issues"
+  },
+  "homepage": "https://github.com/alonsor2/Exercise-App#readme",
+  "dependencies": {
+      "express": "^4.16.4",
+      "bootstrap":"^4.1.3",
+      "jquery": "^3.3.1",
+      "popper.js": "^1.14.4"
+
+    }
+
+}
