@@ -4,12 +4,18 @@ class Application {
         this.users = [];
         
     }
+
+    addExercise(exercise, user)
+    {
+        this.users[user].exerciseDone.push(exercise);
+    }
 }
 
 class User {
-    constructor(name, exercise){
+    constructor(name, id){
+        this.id = id;
         this.name = name;
-        this.exercise = exercise;
+        this.exerciseDone = [];
         
     }
 }
