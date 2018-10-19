@@ -1,9 +1,9 @@
 const express = require('express');
 const {Application, User} = require('./users');
-//const {Exercises} = require('./exercises');
+
 
 var application = new Application();
-//var exercise = new Exercises();
+
 const app = express.Router();
 
 
@@ -22,13 +22,24 @@ app.get("/users/view", (req,res) => {
 })
 
 app.get("/users/view/:id", (req, res) => {
-    res.send(application.users[req.params.id]);
+    var identity = req.header("userID");
+    if(application.users[req.params.id].accessType.includes(String(userID)))
+        res.send(application.users[req.params.id]);
+    else
+        res.send("Access Denied");
 
 })
 
 app.post("/users/view/activity", (req, res) => {
     var identity = req.header("usersID");
     application.addExercise(req.body.exercise, identity);
+
+})
+
+app.post("users/accesscontrol", (req, res) => {
+    var identity = req.header("usersID");
+    application.access(req.body.viewer, identity);
+    res.send("Access granted");
 
 })
 
