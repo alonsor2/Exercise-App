@@ -28,10 +28,10 @@ app.get("/users/view", (req,res) => {
 
 app.get("/users/view/:userid", (req, res) => {
     var identity = req.header("usersIDNum");
-    if(application.users[req.params.userid].accessType.includes(String(identity)))
+    if(application.users[req.params.userid].sharedWith.includes(String(identity)))
         res.send(application.users[req.params.userid]);
     else
-        res.send("Access Denied");
+        res.send("Access Denied: Get permission to View");
 
 })
 

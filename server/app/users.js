@@ -17,7 +17,7 @@ class Application {
 
     access(viewer, user){
 
-        this.users[user].accessType.push(viewer);
+        this.users[user].sharedWith.push(viewer);
     }
 }
 
@@ -25,7 +25,7 @@ class User {
     constructor(name, id){
         this.id = id;
         this.name = name;
-        this.SharedWith = "User " + [String(id)];
+        this.sharedWith = [String(id)];
         this.completedExercise = [];
         this.completedSport = [] 
     }
