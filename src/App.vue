@@ -4,6 +4,7 @@
       <img alt="Vue logo" src="./assets/logo.png" id="logo">
         StayFit
     </div>
+    <Nav />
     <router-view/>
   </div>
 </template>
