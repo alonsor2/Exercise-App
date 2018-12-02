@@ -5,7 +5,14 @@ export function GetState(){
     return myFetch(api_root + "/");
 }
 
+export function Login(name){
+    return myFetch(api_root + `/users`, {name:name})
+    .then(x => userId = x.id);
+}
 
+export function GetWorkouts(){
+    return myFetch(api_root + `getWorkouts`);
+}
 
 
 function myFetch(url = ``, data = null) {
@@ -13,7 +20,7 @@ function myFetch(url = ``, data = null) {
           cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
           credentials: "same-origin", // include, same-origin, *omit
           headers: {
-              playerId: playerId
+              userId: userId
           }
     };
     if(data){
@@ -32,3 +39,4 @@ function myFetch(url = ``, data = null) {
     .then(response =>{
       return response.json()
     }); // parses response to JSON
+}

@@ -4,7 +4,7 @@
        <div class = "col-md-4">
           <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
-              <h5 class="card-title">My Profile</h5>
+              <h5 class="card-title">My Profile </h5>
               <a href="/MyProfile" role="button" class="btn btn-primary"><i class="icon-user"></i></a>
             </div>
           </div>
@@ -54,8 +54,9 @@
          
          <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
-              <h5 class="card-title">IDK</h5>
-              <a href="#" role="button" class="btn btn-dark">Dark</a>
+              <h5 class="card-title">Login(<i v-if="userId() !== null">(Welcome {{userId().name}})</i>)</h5>
+              <a @click.prevent="login" role="button" class="btn btn-dark" :class="{disabled: userId() !==null}" ></a>
+              
             </div>
           </div>
        </div>
@@ -114,6 +115,35 @@
    height: 100px;
    width: 100px;
   }
-
-  
+ 
 </style>
+
+<script>
+import {GetState, Login, userId} from '@/services/api_access';
+
+export default {
+  data: function(){
+      return {
+             state: {
+                 users: [],
+             }
+      }
+             
+    },
+  created: function(){
+    this.refresh();
+
+  },
+  methods: {
+    refresh: function(){
+      GetState()
+      .then(x => this.state = x)
+    },
+    login: function(){
+      Login(prompt('What is your name?'))
+      .then(()=> this.refresh())
+    },
+    userId: ()=> userId
+  }
+}
+</script>
