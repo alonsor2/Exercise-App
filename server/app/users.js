@@ -25,6 +25,9 @@ class User {
     constructor(name, id){
         this.id = id;
         this.name = name;
+        this.height = null;
+        this.weight = null;
+        this.hobbies = [String(null)];
         this.sharedWith = [String(id)];
         this.completedExercise = [];
         this.completedSport = [] 

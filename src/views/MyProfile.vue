@@ -5,7 +5,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">First Name</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="First">
+      <input type="name" class="form-control" id="inputEmail4" placeholder="First">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Last Name</label>
@@ -34,15 +34,7 @@
       </select>
     </div>
   </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Save</button>
+  <button type="save" class="btn btn-primary">Save</button>
 </form>
   </div>
 </template>

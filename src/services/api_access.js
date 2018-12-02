@@ -11,7 +11,7 @@ export function Login(name){
 }
 
 export function GetWorkouts(){
-    return myFetch(api_root + `getWorkouts`);
+    return myFetch(api_root + `/getWorkouts`);
 }
 
 

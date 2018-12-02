@@ -54,9 +54,13 @@
          
          <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
-              <h5 class="card-title">Login(<i v-if="userId() !== null">(Welcome {{userId().name}})</i>)</h5>
+              <h5 class="card-title">Login</h5>
               <a @click.prevent="login" role="button" class="btn btn-dark" :class="{disabled: userId() !==null}" ></a>
-              
+              <li v-for="u in state.users" :key="u.id"
+                 class="list-group-item">
+                 <img />
+                 <h5>{{u.name}}</h5>
+              </li>
             </div>
           </div>
        </div>
