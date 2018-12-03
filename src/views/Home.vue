@@ -49,18 +49,11 @@
             </div>
           </div>
        </div>
-
-       <div class = "col-md-4">
-         
+      <div class = "col-md-4">
          <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
               <h5 class="card-title">Login</h5>
               <a @click.prevent="login" role="button" class="btn btn-dark" :class="{disabled: userId() !==null}" ></a>
-              <li v-for="u in state.users" :key="u.id"
-                 class="list-group-item">
-                 <img />
-                 <h5>{{u.name}}</h5>
-              </li>
             </div>
           </div>
        </div>
@@ -123,10 +116,10 @@
 </style>
 
 <script>
-import {GetState, Login, userId} from '@/services/api_access';
-
+import * as api from '@/services/api_access';
+let loopTimer = null;
 export default {
-  data: function(){
+  data(){
       return {
              state: {
                  users: [],
@@ -134,20 +127,19 @@ export default {
       }
              
     },
-  created: function(){
-    this.refresh();
+  created(){
+    loopTimer = setInterval(this.refresh, 1000);
 
   },
   methods: {
-    refresh: function(){
-      GetState()
+    refresh(){
+      api.GetState()
       .then(x => this.state = x)
     },
-    login: function(){
-      Login(prompt('What is your name?'))
-      .then(()=> this.refresh())
+    login(){
+      api.Login();
     },
-    userId: ()=> userId
+    userId: ()=> api.userId
   }
 }
 </script>

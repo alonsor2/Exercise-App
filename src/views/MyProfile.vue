@@ -4,12 +4,18 @@
     <form>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">First Name</label>
-      <input type="name" class="form-control" id="inputEmail4" placeholder="First">
+      <label for="inputFirstName">First Name</label>
+      <input type="name" class="form-control" id="inputFirstName" placeholder="First">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Last Name</label>
-      <input type="text" class="form-control" id="inputPassword4" placeholder="Last">
+      <label for="inputLastName">Last Name</label>
+      <input type="text" class="form-control" id="inputLastName" placeholder="Last">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="DOB">DOB</label>
+      <input type="date" class="form-control" id="DOB">
     </div>
   </div>
   <div class="form-group">

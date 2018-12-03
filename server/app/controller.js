@@ -56,8 +56,9 @@ app.post("/users/giveaccess", (req, res) => {
 
 })
 
-app.get("/getWorkouts", (req, res) => {
-    res.send(application.workout());
+app.post('/users', (req, res) => {
+    const player = application.login(req.body.name)
+    res.send(player);
 })
 
 module.exports = app;

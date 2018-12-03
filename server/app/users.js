@@ -19,6 +19,8 @@ class Application {
 
         this.users[user].sharedWith.push(viewer);
     }
+
+    
 }
 
 class User {
