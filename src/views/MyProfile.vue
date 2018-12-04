@@ -15,7 +15,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="DOB">DOB</label>
-      <input type="date" class="form-control" id="DOB">
+      <input type="date" class="form-control" id="DOB" placeholder="">
     </div>
   </div>
   <div class="form-group">

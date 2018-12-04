@@ -11,7 +11,6 @@
        </div>
 
        <div class = "col-md-4">
-         
          <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
               <h5 class="card-title">Exercise Tracker</h5>
@@ -21,7 +20,6 @@
        </div>
 
        <div class = "col-md-4">
-         
          <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
               <h5 class="card-title">Nutrition Tracker</h5>
@@ -31,7 +29,6 @@
        </div>
 
        <div class = "col-md-4">
-         
          <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
               <h5 class="card-title">Workouts</h5>
@@ -41,7 +38,6 @@
        </div>
 
        <div class = "col-md-4">
-         
          <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
               <h5 class="card-title">My Friends</h5>
@@ -54,6 +50,7 @@
             <div class="card-body" id: cardBody>
               <h5 class="card-title">Login</h5>
               <a @click.prevent="login" role="button" class="btn btn-dark" :class="{disabled: userId() !==null}" ></a>
+              <i v-if="userId() !== null">(Welcome {{state.users[userId()].name}})</i>
             </div>
           </div>
        </div>
@@ -137,7 +134,8 @@ export default {
       .then(x => this.state = x)
     },
     login(){
-      api.Login();
+      api.Login(prompt('What is your name?'))
+      .then(()=> this.refresh())
     },
     userId: ()=> api.userId
   }

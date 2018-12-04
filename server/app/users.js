@@ -29,6 +29,7 @@ class User {
         this.name = name;
         this.height = null;
         this.weight = null;
+        this.dob = null;
         this.hobbies = [String(null)];
         this.sharedWith = [String(id)];
         this.completedExercise = [];
