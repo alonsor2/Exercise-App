@@ -6,10 +6,10 @@
       <div class="card" >
           <h5 class="card-header">Exercises Completed Sunday</h5>
             <div class="card-body" id: cardBody>
+                
             <h5 class="card-footer">
-                <a href="#" role="text" id ="AddExercise">Add  </a>
+                <a href="#" role="text" id ="AddExercise" onclick ="AddExercise()">Add </a>
                 <a href="#" role="text" id= "Clear"  > Clear</a>
-              
             </h5>
             </div>
         </div>
@@ -96,3 +96,38 @@
     }
 
 </style>
+
+<script>
+import * as api from '@/services/api_access';
+let loopTimer = null;
+export default {
+  data(){
+      return {
+             state: {
+                 users: [],
+                 exercises:[]
+             }
+      }
+             
+    },
+  created(){
+    loopTimer = setInterval(this.refresh, 1000);
+
+  },
+  methods: {
+    refresh(){
+      api.GetState()
+      .then(x => this.state = x)
+    },
+    login(){
+      api.Login(prompt('What is your name?'))
+      .then(()=> this.refresh())
+    },
+    AddExercise(){
+        api.addExercise(prompt('Add Exercisee'))
+        .then(()=> this.refresh())
+    },
+    userId: ()=> api.userId
+  }
+}
+</script>

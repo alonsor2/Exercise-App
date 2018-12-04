@@ -49,7 +49,7 @@
          <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
               <h5 class="card-title">Login</h5>
-              <a @click.prevent="login" role="button" class="btn btn-dark" :class="{disabled: userId() !==null}" ></a>
+              <a @click.prevent="login" role="button" class="btn btn-dark" :class="{disabled: userId() !==null}" ><i class="icon-login"></i></a>
               <i v-if="userId() !== null">(Welcome {{state.users[userId()].name}})</i>
             </div>
           </div>
@@ -109,7 +109,23 @@
    height: 100px;
    width: 100px;
   }
- 
+  .icon-login{
+     background-image : url(https://cdn3.iconfinder.com/data/icons/security-3-1/512/access-512.png);
+   background-size: cover;
+   display: inline-block;
+   height: 80px;
+   width: 80px;
+  }
+  div.card{
+    margin-bottom: 10px;
+  }
+
+  .card{
+    background-color: lightgray;
+  }
+  .home{
+    background-color: azure
+  }
 </style>
 
 <script>

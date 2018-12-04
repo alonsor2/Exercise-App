@@ -14,6 +14,10 @@ export function GetWorkouts(){
     return myFetch(api_root + `/getWorkouts`);
 }
 
+export function addExercise(){
+    return myFetch(api_root + `/users/activity`);
+}
+
 
 function myFetch(url = ``, data = null) {
     let options = {
