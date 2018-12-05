@@ -17,9 +17,8 @@ app.get("/getExercises", (req, res) => {
 })
 
 app.post("/users/addUser", (req, res) => {
-    const NewUser = new User(req.body.name, application.users.length);
-    application.users.push(NewUser);
-    res.send(NewUser);
+    const user = application.login(req.body.name, req.body.fbid, req.body.access_token)
+    res.send(user);
 })
 
 app.get("/users/view", (req,res) => {

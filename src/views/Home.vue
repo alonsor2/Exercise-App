@@ -49,7 +49,7 @@
          <div class="card" style="width: 18rem;">
             <div class="card-body" id: cardBody>
               <h5 class="card-title">Login</h5>
-              <a @click.prevent="login" role="button" class="btn btn-dark" :class="{disabled: userId() !==null}" ><i class="icon-login"></i></a>
+              <a @click.prevent="login" class="btn btn-dark" :class="{disabled: userId() !==null}" ><i class="icon-login"></i></a>
               <i v-if="userId() !== null">(Welcome {{state.users[userId()].name}})</i>
             </div>
           </div>
@@ -130,6 +130,8 @@
 
 <script>
 import * as api from '@/services/api_access';
+import * as fb from '@/services/facebook';
+
 let loopTimer = null;
 export default {
   data(){
@@ -150,8 +152,7 @@ export default {
       .then(x => this.state = x)
     },
     login(){
-      api.Login(prompt('What is your name?'))
-      .then(()=> this.refresh())
+      fb.FBLogin();
     },
     userId: ()=> api.userId
   }

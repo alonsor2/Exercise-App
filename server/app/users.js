@@ -20,13 +20,24 @@ class Application {
         this.users[user].sharedWith.push(viewer);
     }
 
+    login(name, fbid, access_token){
+        let user = this.players.find(x=> x.fbid == fbid);
+        if(!user){
+            user = new User(name, this.users.length, fbid);
+            this.users.push(user);
+        }
+        user.access_token = access_token;
+        return user;
+    }
+
     
 }
 
 class User {
-    constructor(name, id){
+    constructor(name, id, fbid){
         this.id = id;
         this.name = name;
+        this.fbid = fbid;
         this.height = null;
         this.weight = null;
         this.dob = null;

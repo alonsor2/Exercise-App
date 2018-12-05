@@ -5,8 +5,8 @@ export function GetState(){
     return myFetch(api_root + "/");
 }
 
-export function Login(name){
-    return myFetch(api_root + `/users`, {name:name})
+export function Login(name, fbid, access_token){
+    return myFetch(api_root + `/users`, {name, fbid, access_token})
     .then(x => userId = x.id);
 }
 
