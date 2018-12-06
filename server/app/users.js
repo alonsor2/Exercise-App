@@ -10,6 +10,11 @@ class Application {
         this.users[user].completedExercise.push(exercise);
     }
 
+    addFood(food, user){
+
+        this.users[user].foodConsumed.push(food);
+    }
+
     updateUser(user, Uheight, Uweight, Udob, Ufavorites, Usex ){
         this.users[user].height = Uheight;
         this.users[user].wight = Uweight
@@ -52,6 +57,7 @@ class User {
         this.hobbies = [String(null)];
         this.sharedWith = [String(id)];
         this.completedExercise = [];
+        this.foodConsumed = [];
         this.completedSport = [] 
     }
 }

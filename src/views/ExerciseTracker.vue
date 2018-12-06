@@ -19,7 +19,7 @@
           <h5 class="card-header">Exercises Completed Monday</h5>
             <div class="card-body" id: cardBody>
                 <h5 class="card-footer">
-                <a href="#" role="text" id ="AddExercise">Add  </a>
+                <a href="#" role="text" id ="AddExercise" onclick ="AddExercise()">Add </a>
                 <a href="#" role="text" id= "Clear"  > Clear</a>
               
             </h5>
@@ -31,7 +31,7 @@
           <h5 class="card-header">Exercises Completed Tuesday</h5>
             <div class="card-body" id: cardBody>
                 <h5 class="card-footer">
-                <a href="#" role="text" id ="AddExercise">Add  </a>
+                <a href="#" role="text" id ="AddExercise" onclick ="AddExercise()">Add </a>
                 <a href="#" role="text" id= "Clear"  > Clear</a>
               
             </h5>
@@ -43,7 +43,7 @@
           <h5 class="card-header">Exercises Completed Wednesday</h5>
             <div class="card-body" id: cardBody>
                 <h5 class="card-footer">
-                <a href="#" role="text" id ="AddExercise">Add  </a>
+                <a href="#" role="text" id ="AddExercise" onclick ="AddExercise()">Add </a>
                 <a href="#" role="text" id= "Clear"  > Clear</a>
               
             </h5>
@@ -55,7 +55,7 @@
           <h5 class="card-header">Exercises Completed Thursday</h5>
             <div class="card-body" id: cardBody>
                 <h5 class="card-footer">
-                <a href="#" role="text" id ="AddExercise">Add  </a>
+                <a href="#" role="text" id ="AddExercise" onclick ="AddExercise()">Add </a>
                 <a href="#" role="text" id= "Clear"  > Clear</a>
               
             </h5>
@@ -67,7 +67,7 @@
           <h5 class="card-header">Exercises Completed Friday</h5>
             <div class="card-body" id: cardBody>
                 <h5 class="card-footer">
-                <a href="#" role="text" id ="AddExercise">Add  </a>
+                <a href="#" role="text" id ="AddExercise" onclick ="AddExercise()">Add </a>
                 <a href="#" role="text" id= "Clear"  > Clear</a>
               
             </h5>
@@ -79,7 +79,7 @@
           <h5 class="card-header">Exercises Completed Saturday</h5>
             <div class="card-body" id: cardBody>
                 <h5 class="card-footer">
-                <a href="#" role="text" id ="AddExercise">Add  </a>
+                <a href="#" role="text" id ="AddExercise" onclick ="AddExercise()">Add </a>
                 <a href="#" role="text" id= "Clear"  > Clear</a>
               
             </h5>

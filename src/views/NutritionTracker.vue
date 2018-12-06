@@ -94,3 +94,42 @@
 <style lang="scss">
  
 </style>
+
+<script>
+import * as api from '@/services/api_access';
+let loopTimer = null;
+export default {
+  data(){
+      return {
+             state: {
+                 users: [],
+                 exercises:[]
+             }
+      }
+             
+    },
+  created(){
+    loopTimer = setInterval(this.refresh, 1000);
+
+  },
+  methods: {
+    refresh(){
+      api.GetState()
+      .then(x => this.state = x)
+    },
+    login(){
+      api.Login(prompt('What is your name?'))
+      .then(()=> this.refresh())
+    },
+    AddExercise(){
+        api.addExercise(prompt('Add Exercisee'))
+        .then(()=> this.refresh())
+    },
+    AddFood(){
+        api.addFood(prompt('Add Food'))
+        .then(()=> this.refresh())
+    },
+    userId: ()=> api.userId
+  }
+}
+</script>
