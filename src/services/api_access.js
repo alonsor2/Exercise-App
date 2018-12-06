@@ -17,6 +17,9 @@ export function GetWorkouts(){
 export function addExercise(){
     return myFetch(api_root + `/users/activity`);
 }
+export function updateUserInfo(user, height, weight, dob, favorites, sex){
+    return myFetch(api_root + `/users/info`, {user, height, weight, dob, favorites, sex})
+}
 
 
 function myFetch(url = ``, data = null) {

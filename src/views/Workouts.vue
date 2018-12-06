@@ -1,6 +1,6 @@
 <template>
   <div class="Workouts">
-  <h1>Suggested exercies and Workouts</h1>
+  <h1>Suggested Exercies and Workouts</h1>
   <div class = "row">
     <div class= "col-md-6">
         <div class="card" >

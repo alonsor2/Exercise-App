@@ -10,6 +10,14 @@ class Application {
         this.users[user].completedExercise.push(exercise);
     }
 
+    updateUser(user, Uheight, Uweight, Udob, Ufavorites, Usex ){
+        this.users[user].height = Uheight;
+        this.users[user].wight = Uweight
+        this.users[user].dob = Udob;
+        this.users[user].sex = Usex;
+        this.users[user].hobbies.push(Ufavorites);
+    }
+
     addSport(sport, user){
 
         this.users[user].completedSport.push(sport);

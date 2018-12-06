@@ -28,8 +28,8 @@
           </div>
        </div>
 
-       <div class = "col-md-4">
-         <div class="card" style="width: 18rem;">
+       <div class = "col-md-6 text-center" >
+         <div class="card" >
             <div class="card-body" id: cardBody>
               <h5 class="card-title">Workouts</h5>
               <a href="Workouts" role="button" class="btn btn-warning"><i class="icon-workout"></i></a>
@@ -37,16 +37,9 @@
           </div>
        </div>
 
-       <div class = "col-md-4">
-         <div class="card" style="width: 18rem;">
-            <div class="card-body" id: cardBody>
-              <h5 class="card-title">My Friends</h5>
-              <a href="MyFriends" role="button" class="btn btn-info"><i class="icon-friends"></i></a>
-            </div>
-          </div>
-       </div>
-      <div class = "col-md-4">
-         <div class="card" style="width: 18rem;">
+       
+      <div class = "col-md-6 text-center">
+         <div class="card" >
             <div class="card-body" id: cardBody>
               <h5 class="card-title">Login</h5>
               <a @click.prevent="login" class="btn btn-dark" :class="{disabled: userId() !==null}" ><i class="icon-login"></i></a>
@@ -126,6 +119,7 @@
   .home{
     background-color: azure
   }
+
 </style>
 
 <script>

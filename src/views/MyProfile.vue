@@ -40,7 +40,41 @@
       </select>
     </div>
   </div>
-  <button type="save" class="btn btn-primary">Save</button>
+  <button @click.prevent="saveProfile" type="save" class="btn btn-primary">Save</button>
 </form>
   </div>
 </template>
+
+<script>
+import * as api from '@/services/api_access';
+
+let loopTimer = null;
+export default {
+  data(){
+      return {
+             state: {
+                 users: [],
+             }
+      }
+             
+    },
+  created(){
+    loopTimer = setInterval(this.refresh, 1000);
+
+  },
+  methods: {
+    refresh(){
+      api.GetState()
+      .then(x => this.state = x)
+    },
+    saveProfile(){
+      api.updateUserInfo()
+
+    },
+    login(){
+      fb.FBLogin();
+    },
+    userId: ()=> api.userId
+  }
+}
+</script>

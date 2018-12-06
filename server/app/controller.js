@@ -41,6 +41,13 @@ app.post("/users/activity", (req, res) => {
 
 })
 
+app.post("/users/info", (req, res) => {
+    var identity = req.header("usersIDNum");
+    application.addExercise(req.body.exercise, identity);
+    res.send(application.users[identity]);
+
+})
+
 app.post("/users/sport", (req, res) => {
     var identity = req.header("usersIDNum");
     application.addSport(req.body.sport, identity);
