@@ -34,7 +34,7 @@ class Application {
     }
 
     login(name, fbid, access_token){
-        let user = this.players.find(x=> x.fbid == fbid);
+        let user = this.users.find(x=> x.fbid == fbid);
         if(!user){
             user = new User(name, this.users.length, fbid);
             this.users.push(user);
